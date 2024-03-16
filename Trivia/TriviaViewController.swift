@@ -27,8 +27,35 @@ class TriviaViewController: UIViewController {
     addGradient()
     questionContainerView.layer.cornerRadius = 8.0
     // TODO: FETCH TRIVIA QUESTIONS HERE
+      // Fetch trivia questions here
+      TriviaManager.fetchTriviaQuestions(amount: 10) { [weak self] questions, error in
+          guard let self = self else { return }
+          if let error = error {
+              DispatchQueue.main.async {
+                  self.showErrorMessage(message: "Error fetching trivia questions: \(error.localizedDescription)")
+              }
+              return
+          }
+             
+             // Assuming triviaQuestions is an instance variable to hold the fetched questions
+             // Store the fetched questions
+                        if let questions = questions {
+                            self.questions = questions
+                        }
+             
+             // Update UI with the first question
+             DispatchQueue.main.async {
+                 self.updateQuestion(withQuestionIndex: 0)
+             }
+         }
   }
-  
+    private func showErrorMessage(message: String) {
+           let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           alertController.addAction(okAction)
+           present(alertController, animated: true, completion: nil)
+       }
+    
   private func updateQuestion(withQuestionIndex questionIndex: Int) {
     currentQuestionNumberLabel.text = "Question: \(questionIndex + 1)/\(questions.count)"
     let question = questions[questionIndex]
@@ -64,9 +91,13 @@ class TriviaViewController: UIViewController {
     updateQuestion(withQuestionIndex: currQuestionIndex)
   }
   
-  private func isCorrectAnswer(_ answer: String) -> Bool {
-    return answer == questions[currQuestionIndex].correctAnswer
-  }
+    private func isCorrectAnswer(_ answer: String) -> Bool {
+        guard currQuestionIndex < questions.count else {
+            // Handle index out of range error, for example, return false or throw an error
+            return false
+        }
+        return answer == questions[currQuestionIndex].correctAnswer
+    }
   
   private func showFinalScore() {
     let alertController = UIAlertController(title: "Game over!",
@@ -107,4 +138,5 @@ class TriviaViewController: UIViewController {
     updateToNextQuestion(answer: sender.titleLabel?.text ?? "")
   }
 }
+
 

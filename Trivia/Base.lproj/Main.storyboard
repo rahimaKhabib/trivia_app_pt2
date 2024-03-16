@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -121,10 +122,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="answerButton0" destination="sZY-gR-P4S" id="ka8-N5-FaQ"/>
-                        <outlet property="answerButton1" destination="kvu-mi-Fc4" id="Gro-FD-aYZ"/>
-                        <outlet property="answerButton2" destination="HIy-Sz-Zms" id="iNL-ma-Uk0"/>
-                        <outlet property="answerButton3" destination="XQs-Qf-aRm" id="O1y-DZ-8ow"/>
+                        <outlet property="answerButton0" destination="sZY-gR-P4S" id="ttu-oK-eEd"/>
+                        <outlet property="answerButton1" destination="kvu-mi-Fc4" id="fF0-QY-2FR"/>
+                        <outlet property="answerButton2" destination="HIy-Sz-Zms" id="zp9-nS-36w"/>
+                        <outlet property="answerButton3" destination="XQs-Qf-aRm" id="Ckt-9b-Aun"/>
                         <outlet property="categoryLabel" destination="AUd-ko-6Y3" id="6bG-rG-T0k"/>
                         <outlet property="currentQuestionNumberLabel" destination="7cc-UQ-syY" id="MXD-Iw-NpJ"/>
                         <outlet property="questionContainerView" destination="h9Z-qS-mLD" id="sVv-uN-5F1"/>
@@ -138,7 +139,7 @@
     </scenes>
     <resources>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
